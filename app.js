@@ -12,10 +12,10 @@ function tick(){
     minutes = Math.floor((timeLeft/ (1000 * 60)) % 60),
     hours = Math.floor((timeLeft/ (1000 * 60 * 60)) % 24);
 
-    days = (days < 10) ? "0"+days : days;
-  hours = (hours < 10) ? "0" + hours : hours;
-  minutes = (minutes < 10) ? "0" + minutes : minutes;
-  seconds = (seconds < 10) ? "0" + seconds : seconds;
+  days = (days < 10) ? "0"+ days : (days < 0) ? "00" :  days;
+  hours = (hours < 10) ? "0" + hours : (hours < 0) ? "00" : hours;
+  minutes = (minutes < 10) ? "0" + minutes : (minutes < 0) ? "00" : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : (seconds < 0) ? "00" : seconds;
 
   const countDown = `${days}:${hours}:${minutes}:${seconds}`;
 
